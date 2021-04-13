@@ -1,22 +1,20 @@
-# Mocha ES6 modules example
-An example of running [Mocha](https://mochajs.org/) tests as a native [ES6 modules](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/) in a browser.
+# 100mslive sdk tests
+An example of running tests as a native ES6 modules in a browser. Since 100mslive sdk is dependent internally on a lot of browser apis, we are running tests inside browser environment.
 
-* If browser supports ES6 modules — the are used. 
-* If browser does not support ES6 modules — the page fallbacks to bundled script.
-
-You can [check it online](https://vitalets.github.io/mocha-es6-modules/) in your browser.
-
-#### With ES modules (Chrome >= 62):
-![Mocha tests With ES modules](https://user-images.githubusercontent.com/1473072/33773729-e7208d38-dc49-11e7-9748-f2139bc55e39.png)
-
-#### Without ES modules (Firefox 57):
-![Mocha tests Without ES modules](https://user-images.githubusercontent.com/1473072/33773726-e4ff96a2-dc49-11e7-8a69-45d44c424e15.png)
+# Depenencies
+  * @100mslive/hmsvideo-web: sdk under test
+  * mocha: test runner
+  * playwright : for launching browser Programmatically
+  * chai: assertion library
+  * webpack: module bundler.
+  * If browser supports ES6 modules — the are used. 
+  * If browser does not support ES6 modules — the page fallbacks to bundled script.
 
 ## Run locally
 1. Clone the repo:
     ```bash
-    git clone https://github.com/vitalets/mocha-es6-modules.git
-    cd mocha-es6-modules
+    git clone git@github.com:sahil-sdet/100mslive-sdk-tests.git
+    cd 100mslive-sdk-tests
     ```
 2. Install dependencies:
     ```bash
@@ -26,8 +24,16 @@ You can [check it online](https://vitalets.github.io/mocha-es6-modules/) in your
     ```bash
     npm run build
     ```
-4. Start local http server:
+4. run http-server -p 8080
+5. Go to http://127.0.0.1:8080 in browser & see the tests running.
+6. Or Skip steps 4 & 5 and run below command. It will lauch browser programmatically & start running tests. If you face port already allocated error, please open Activity Monitor & kill the appropriate process.
     ```bash
-    npm run server
+    npm run test
     ```
-5. Open http://localhost:8000 in browser.
+
+# Pending Improvements
+  * Reporting support
+  * Remove harcoding & make configs
+  * Environment Support
+  * Parallel Testing Support
+  * and many more. 
