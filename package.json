@@ -1,0 +1,21 @@
+{
+  "name": "100mslive-sdk-tests",
+  "version": "0.1.0",
+  "scripts": {
+    "server": "http-server -p 8080 -c-1",
+    "build": "webpack",
+    "test": "npm run server & mocha './test/*.js' --reporter spec --timeout 1000000"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "http-server": "^0.10.0",
+    "script-loader": "^0.7.2",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "@100mslive/hmsvideo-web": "^1.0.0",
+    "mocha": "^8.3.2",
+    "mochawesome": "^6.2.2",
+    "playwright": "^1.10.0"
+  }
+}
