@@ -41,7 +41,7 @@ const getLocalStream = async(client) => {
 
 describe('100msLive SDK tests', async() => {
 
-  /*it('Client tries to join room without connecting to SFU', async () => {
+  it('Client tries to join room without connecting to SFU', async () => {
     let client = await createClient(clientA,authTokenA);
     let disconnected = false;
     client.on('disconnect', async () => {
@@ -142,7 +142,7 @@ describe('100msLive SDK tests', async() => {
     let d = await client.broadcast(payload, roomA);
     await new Promise(r => setTimeout(r, 3000));
     await client.disconnect();
-  }).timeout(35000);*/
+  }).timeout(35000);
 
   it('Client is able to subscribe stream', async () => 
   {
